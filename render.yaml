@@ -3,7 +3,7 @@ services:
     name: fasal-dristhi-backend
     env: node
     plan: free
-    rootDir: ai_detect/hacktoberfest_2026/backend
+    rootDir: ai_detect/2026/backend
     buildCommand: npm install
     startCommand: node index.js
     envVars:

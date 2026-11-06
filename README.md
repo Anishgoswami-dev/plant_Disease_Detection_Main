@@ -103,7 +103,7 @@ plant_Disease_Detection_Main/
 │   └── assets/
 │       └── fasal_dristhi_app_preview.png   # Farmer portal mobile UI preview
 └── ai_detect/
-    └── hacktoberfest_2026/                 # Core Application Workspace
+    └── 2026/                               # Core Application Workspace
         ├── .env.example                    # Shared environment configuration template
         ├── backend/                        # Node.js / Express REST API Gateway (Port 4000)
         │   ├── index.js                    # Core gateway, JWT auth, scan routing & fallbacks
@@ -211,14 +211,14 @@ Copy the `.env.example` templates into active `.env` files (never commit real se
 
 ```powershell
 # Shared root & Backend environment
-Copy-Item "ai_detect/hacktoberfest_2026/.env.example" "ai_detect/hacktoberfest_2026/.env"
-Copy-Item "ai_detect/hacktoberfest_2026/backend/.env.example" "ai_detect/hacktoberfest_2026/backend/.env"
+Copy-Item "ai_detect/2026/.env.example" "ai_detect/2026/.env"
+Copy-Item "ai_detect/2026/backend/.env.example" "ai_detect/2026/backend/.env"
 
 # ML Microservice environment
-Copy-Item "ai_detect/hacktoberfest_2026/ml/.env.example" "ai_detect/hacktoberfest_2026/ml/.env"
+Copy-Item "ai_detect/2026/ml/.env.example" "ai_detect/2026/ml/.env"
 
 # Frontend environment
-Copy-Item "ai_detect/hacktoberfest_2026/frontend/.env.example" "ai_detect/hacktoberfest_2026/frontend/.env"
+Copy-Item "ai_detect/2026/frontend/.env.example" "ai_detect/2026/frontend/.env"
 ```
 
 <details>
@@ -244,7 +244,7 @@ Open **three terminal windows**:
 
 #### 🖥️ Terminal 1 — ML Inference Microservice (Port `8000`)
 ```powershell
-cd ai_detect/hacktoberfest_2026/ml
+cd ai_detect/2026/ml
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
@@ -254,7 +254,7 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 
 #### 🖥️ Terminal 2 — Backend API Gateway (Port `4000`)
 ```powershell
-cd ai_detect/hacktoberfest_2026/backend
+cd ai_detect/2026/backend
 npm install
 npm start
 ```
@@ -262,7 +262,7 @@ npm start
 
 #### 🖥️ Terminal 3 — Farmer Web Portal (Port `5173`)
 ```powershell
-cd ai_detect/hacktoberfest_2026/frontend
+cd ai_detect/2026/frontend
 npm install
 npm run dev
 ```
@@ -275,13 +275,13 @@ npm run dev
 This repository includes ready-to-deploy production configurations:
 
 1. **Frontend (Vercel):**
-   - Root Directory: `ai_detect/hacktoberfest_2026/frontend`
+   - Root Directory: `ai_detect/2026/frontend`
    - Includes `vercel.json` for SPA history routing.
    - Set `VITE_API_BASE_URL` to your deployed Render backend URL.
 2. **Backend Gateway (Render):**
-   - Root blueprint: [`render.yaml`](render.yaml) automatically provisions `fasal-dristhi-backend` from `ai_detect/hacktoberfest_2026/backend`.
+   - Root blueprint: [`render.yaml`](render.yaml) automatically provisions `fasal-dristhi-backend` from `ai_detect/2026/backend`.
 3. **ML Inference Service (Docker / Render):**
-   - Containerized via `ai_detect/hacktoberfest_2026/ml/Dockerfile` (`uvicorn app.main:app --host 0.0.0.0 --port 7860`).
+   - Containerized via `ai_detect/2026/ml/Dockerfile` (`uvicorn app.main:app --host 0.0.0.0 --port 7860`).
 
 ---
 
@@ -291,7 +291,7 @@ Run the built-in verification suites to validate calibration, clinical safety ga
 
 ```powershell
 # 1. ML Confidence Calibration (93%-97%) & KVK Clinical Safety Gate Suite
-cd ai_detect/hacktoberfest_2026/ml
+cd ai_detect/2026/ml
 python test_crop_health_confidence_and_safety.py
 
 # 2. Model Checkpoint & Temperature Scaling Verification
