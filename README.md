@@ -1,300 +1,326 @@
 <div align="center">
 
+<img src="docs/assets/fasal_dristhi_app_preview.png" alt="Fasal Dristhi Banner Preview" width="340" style="border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.22); border: 2px solid #16a34a;" />
+
 # 🌾 Fasal Dristhi (CropSentinel)
-### Intelligent Calibrated Plant Disease Diagnostic & Agro-Advisory Platform
+### **Intelligent Calibrated Plant Disease Diagnostic & Multilingual Agro-Advisory Platform**
 
-[![React](https://img.shields.io/badge/Frontend-React_18_%2B_Vite-61DAFB?logo=react&logoColor=black)](https://vitejs.dev/)
-[![Node.js](https://img.shields.io/badge/Backend-Node.js_%2B_Express-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![FastAPI](https://img.shields.io/badge/ML_API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![PyTorch](https://img.shields.io/badge/Deep_Learning-PyTorch-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![MongoDB Atlas](https://img.shields.io/badge/Database-MongoDB_Atlas-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
-[![ElevenLabs](https://img.shields.io/badge/Voice-ElevenLabs_HD-black)](https://elevenlabs.io/)
-[![Backboard.io](https://img.shields.io/badge/Memory-Backboard.io_Persistent_AI-blueviolet)](https://backboard.io/)
-[![Hacktoberfest 2026](https://img.shields.io/badge/Hacktoberfest-2026-FF8800?logo=hacktoberfest&logoColor=white)](https://hacktoberfest.com/)
+*Empowering farmers with calibrated deep learning pathology, clinical safety gating, multilingual voice guidance, and persistent agricultural memory.*
 
-<br />
+[![React](https://img.shields.io/badge/Frontend-React_18_%2B_Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://vitejs.dev/)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js_%2B_Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![FastAPI](https://img.shields.io/badge/ML_Engine-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![PyTorch](https://img.shields.io/badge/Deep_Learning-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![OpenCV](https://img.shields.io/badge/Vision-OpenCV_HSV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+[![MongoDB Atlas](https://img.shields.io/badge/Database-MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
+[![ElevenLabs](https://img.shields.io/badge/Voice_AI-ElevenLabs_HD-000000?style=for-the-badge&logo=elevenlabs&logoColor=white)](https://elevenlabs.io/)
+[![Backboard.io](https://img.shields.io/badge/Memory-Backboard.io_AI-8A2BE2?style=for-the-badge)](https://backboard.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-<img src="docs/assets/fasal_dristhi_app_preview.png" alt="Fasal Dristhi Farmer Application Preview" width="320" style="border-radius: 20px; box-shadow: 0 12px 40px rgba(0,0,0,0.18); border: 1px solid #e2e8f0;" />
-
-<p><em>Fasal Dristhi Farmer Portal: Real-time spray weather, instant leaf diagnostic scout, agronomy tools, and Kisan AI Assistant.</em></p>
+<p align="center">
+  <a href="#-key-highlights--features">✨ Features</a> •
+  <a href="#-system-architecture">🏗️ Architecture</a> •
+  <a href="#-38-supported-crop-disease-classes">🌿 38 Crop Classes</a> •
+  <a href="#-ml-calibration--clinical-safety-protocol">🧬 ML & Safety</a> •
+  <a href="#-quick-start-local-setup">🚀 Quick Start</a> •
+  <a href="#-cloud-deployment-vercel--render">☁️ Deployment</a> •
+  <a href="#-automated-testing-suite">🧪 Testing</a>
+</p>
 
 </div>
 
 ---
 
-## 1. Project Overview & Architecture
+## 🌟 Overview
 
-The repository root is `D:\Plant_Disease_Detection`. The application microservices are located inside `ai_detect/hacktoberfest_2026/`.
+**Fasal Dristhi (CropSentinel)** is a full-stack, production-grade AI agricultural diagnostic and advisory platform built to bridge the gap between laboratory plant pathology and real-world farm decision-making.
 
+Unlike raw image classifiers that blindly output overconfident predictions on blurry or non-foliar photos, **Fasal Dristhi** combines **Temperature-Calibrated Deep Learning (`EfficientNet-B0` / `MobileNetV2`)**, **Classical OpenCV Lesion Morphometry**, **CIB&RC-Compliant Clinical Safety Gating**, **Multilingual ElevenLabs Voice Synthesis**, and **Backboard.io Persistent Farmer Memory** inside a resilient three-tier microservice architecture.
+
+---
+
+## ✨ Key Highlights & Features
+
+| Pillar | Capability | Technical Implementation |
+| :--- | :--- | :--- |
+| 🔬 **Calibrated Leaf Diagnostics** | Classifies **38 crop-disease combinations** across **14 major crops** with calibrated probability scaling ($T = 0.085$ / $T = 0.71392$). | PyTorch (`EfficientNet-B0` @ **93.14%** offline test accuracy & `MobileNetV2` baseline). |
+| 🛡️ **Clinical Safety Gating & KVK Referral** | Prevents hazardous chemical misapplication when scans are ambiguous or out-of-distribution. | Automatic confidence & top-2 margin thresholding; generates printable **Krishi Vigyan Kendra (KVK)** lab referral slips on uncertain scans. |
+| 🎯 **Visual Lesion Localization & Severity** | Computes necrotic/chlorotic tissue damage percentage and bounding contours on leaf surfaces. | Classical OpenCV HSV color-space masking, morphological filtering, and contour area quantification (`detection.py`, `severity.py`). |
+| 🗣️ **Multilingual Voice Advisory** | Reads agronomy prescriptions and Kisan AI answers aloud in natural regional accents. | **ElevenLabs `eleven_multilingual_v2`** streaming TTS with automatic client-side `window.speechSynthesis` fallback. |
+| 🧠 **Persistent Farmer Memory** | Remembers each farmer's crop history, soil context, acreage, and prior outbreaks across sessions. | **Backboard.io** multi-tenant assistant mapping (`FarmerMemoryMapping`) with strict per-farmer isolation. |
+| 🤖 **Multi-Model Kisan AI Orchestrator** | Context-aware conversational agronomy assistant with real-time weather & spray window awareness. | Multi-LLM consensus orchestrator (Google Gemini + OpenAI) augmented with agronomy knowledge base. |
+| 🔄 **Zero-Downtime Resilient Fallbacks** | Operates smoothly even when external cloud services or API keys are unavailable. | Automatic MongoDB Atlas $\rightarrow$ In-Memory fallback, Cloudinary $\rightarrow$ Local storage, ElevenLabs $\rightarrow$ Native Web Speech. |
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    subgraph Client ["📱 Farmer Frontend (React 18 + Vite — Port 5173)"]
+        UI["Leaf Scanner • Spray Weather • Kisan AI Chat • Voice Player"]
+    end
+
+    subgraph Gateway ["⚙️ Backend API Gateway (Node.js + Express — Port 4000)"]
+        Auth["JWT Auth & Multi-Tenant Isolation"]
+        Orch["Multi-Model AI Orchestrator (Gemini / OpenAI)"]
+        TTS["Voice Service (ElevenLabs TTS + Web Speech Fallback)"]
+        Mem["Persistent Memory Service (Backboard.io)"]
+        DB[("MongoDB Atlas / Resilient In-Memory Store")]
+    end
+
+    subgraph MLEngine ["🧬 ML Inference Microservice (FastAPI + PyTorch — Port 8000)"]
+        Pre["Image Validation, MIME Check & Normalization"]
+        CNN["Dual-Arch Classifier (EfficientNet-B0 / MobileNetV2)"]
+        Temp["Temperature Scaling Calibration (T = 0.085)"]
+        CV["OpenCV HSV Lesion Contouring & Severity %"]
+        KB["CIB&RC Agronomy Knowledge Base & KVK Safety Gate"]
+    end
+
+    UI <-->|"REST / Multipart / JWT"| Auth
+    Auth --> Orch
+    Auth --> TTS
+    Orch <--> Mem
+    Auth <--> DB
+    Auth <-->|"Multipart Leaf Scan Proxy"| Pre
+    Pre --> CNN --> Temp --> KB
+    Pre --> CV --> KB
 ```
-D:\Plant_Disease_Detection\
-├── .gitignore                          # Root Git exclusion rules (protects all .env secrets)
-├── README.md                           # Master repository documentation
+
+---
+
+## 📂 Repository Structure
+
+```text
+plant_Disease_Detection_Main/
+├── .gitignore                              # Root Git exclusion rules (protects .env, venv, weights)
+├── README.md                               # Master documentation
+├── LICENSE                                 # MIT Open-Source License
+├── CODE_OF_CONDUCT.md                      # Contributor Covenant Code of Conduct
+├── CONTRIBUTING.md                         # Contribution guidelines & PR workflow
+├── render.yaml                             # Render Cloud Infrastructure-as-Code blueprint
 ├── docs/
 │   └── assets/
-│       └── fasal_dristhi_app_preview.png # Application UI interface screenshot
+│       └── fasal_dristhi_app_preview.png   # Farmer portal mobile UI preview
 └── ai_detect/
-    └── hacktoberfest_2026/             # Application root (Hacktoberfest Edition)
-        ├── .env.example                # Shared environment configuration template
-        ├── backend/                    # Node.js / Express REST API gateway
-        │   ├── index.js                # Core API, JWT auth, scan processing & fallbacks
-        │   ├── voiceService.js         # ElevenLabs Text-to-Speech integration module
+    └── hacktoberfest_2026/                 # Core Application Workspace
+        ├── .env.example                    # Shared environment configuration template
+        ├── backend/                        # Node.js / Express REST API Gateway (Port 4000)
+        │   ├── index.js                    # Core gateway, JWT auth, scan routing & fallbacks
+        │   ├── auth.js                     # Authentication & token middleware
+        │   ├── cropConfig.js               # Crop lifecycle & regional agronomy parameters
+        │   ├── notificationEngine.js       # Proactive pest/weather alert engine
+        │   ├── pushService.js              # Push notification dispatcher
+        │   ├── voiceService.js             # ElevenLabs Multilingual TTS integration
         │   ├── ai/
-        │   │   ├── orchestrator.js     # Multi-model AI orchestrator (Gemini + OpenAI)
-        │   │   └── backboardService.js # Backboard.io Persistent AI Memory service
-        │   ├── test_voice_tts.py       # ElevenLabs TTS automated test suite
-        │   ├── test_backboard_memory.py# Backboard persistent memory test suite
-        │   ├── package.json            # Backend dependency manifest
-        │   └── .env.example            # Backend-specific environment template
-        ├── frontend/                   # React + Vite agricultural user interface
-        │   ├── src/                    # UI components, dashboard, scout tools, Kisan AI
-        │   ├── package.json            # Frontend dependency manifest
-        │   └── .env.example            # Frontend environment template
-        └── ml/                         # Python / FastAPI ML inference microservice
+        │   │   ├── orchestrator.js         # Multi-model LLM orchestrator (Gemini + OpenAI)
+        │   │   └── backboardService.js     # Backboard.io persistent farmer memory service
+        │   ├── test_voice_tts.py           # 16-test automated ElevenLabs TTS verification suite
+        │   ├── test_backboard_memory.py    # Multi-tenant Backboard memory test suite
+        │   └── package.json                # Backend dependencies
+        ├── frontend/                       # React 18 + Vite Farmer Portal (Port 5173)
+        │   ├── src/                        # Interactive dashboard, Leaf Scout, Kisan AI, Audio UI
+        │   ├── vercel.json                 # Vercel SPA production routing config
+        │   └── package.json                # Frontend dependencies
+        └── ml/                             # Python / FastAPI ML Inference Service (Port 8000)
+            ├── Dockerfile                  # Containerized ML deployment specification
             ├── app/
-            │   ├── main.py             # FastAPI entry point & endpoints (/health, /predict)
-            │   ├── model.py            # PyTorch dual-architecture loader & temperature scaling
-            │   ├── config.py           # ML configuration settings & defaults
-            │   ├── detection.py        # Classical OpenCV lesion contour localization
-            │   ├── severity.py         # Tissue damage percentage quantification
-            │   └── preprocessing.py    # Image validation, MIME checks & normalization
-            ├── models/                 # Model checkpoints & calibration parameters
-            │   ├── class_indices.json  # 38-class index-to-label mapping
-            │   └── temperature_T.json  # Calibrated temperature scaling parameter
-            ├── test_crop_health_confidence_and_safety.py # Confidence & Safety test suite
-            ├── test_step4_model_confidence.py # Model loading & calibration test suite
-            ├── requirements.txt        # ML microservice dependencies
-            └── .env.example            # ML microservice environment template
-```
-
-### Microservice Interaction
-
-```
-[ Frontend (Port 5173) ]
-       │
-       ▼ (HTTP / Multipart / JWT)
-[ Backend Gateway (Port 4000) ]
-       ├── Database: MongoDB Atlas (Fallback: Resilient In-Memory Store)
-       ├── Speech Synthesis: ElevenLabs Multilingual REST API (Fallback: Device SpeechSynthesis)
-       ├── Persistent AI Memory: Backboard.io Assistant Memory (Fallback: In-Memory / Stateless)
-       └── Reverse Proxy to ML Service
-       │
-       ▼ (HTTP / Multipart)
-[ ML Inference Service (Port 8000) ]
-       ├── Classification: PyTorch (EfficientNet-B0 / MobileNetV2)
-       ├── Temperature Calibration: T = 0.085 (93%–97% high confidence target)
-       ├── Lesion Contouring: Classical OpenCV HSV morphology
-       └── Agronomy Recommendations: Decoupled Knowledge Base & CIB&RC Prescriptions
+            │   ├── main.py                 # FastAPI endpoints (/health, /predict)
+            │   ├── model.py                # Dual-architecture loader & temperature scaling
+            │   ├── config.py               # Thresholds, temperature & path configuration
+            │   ├── detection.py            # Classical OpenCV HSV lesion localization
+            │   ├── severity.py             # Damaged leaf tissue area quantification
+            │   └── preprocessing.py        # MIME validation, tensor transforms & guards
+            ├── models/
+            │   ├── class_indices.json      # 38-class PlantVillage index mapping
+            │   └── temperature_T.json      # Calibrated temperature scaling metadata
+            ├── knowledge_base.py           # Decoupled CIB&RC prescriptions & cultural controls
+            ├── test_crop_health_confidence_and_safety.py # Clinical safety & calibration test suite
+            ├── test_step4_model_confidence.py            # Checkpoint & temperature scaling tests
+            └── requirements.txt            # Python ML dependencies
 ```
 
 ---
 
-## 2. Supported 38 Plant Disease Classes
+## 🌿 38 Supported Crop-Disease Classes
 
-The model classifies 38 distinct crop-disease combinations across 14 agricultural crops:
+Fasal Dristhi diagnoses **38 distinct healthy and pathological states** across **14 agricultural crops**:
 
-| Crop | Classes Supported |
-| :--- | :--- |
-| **Apple** | Apple Scab, Black Rot, Cedar Apple Rust, Healthy |
-| **Blueberry** | Healthy |
-| **Cherry** | Powdery Mildew, Healthy |
-| **Corn (Maize)** | Cercospora Leaf Spot / Gray Leaf Spot, Common Rust, Northern Leaf Blight, Healthy |
-| **Grape** | Black Rot, Esca (Black Measles), Leaf Blight (Isariopsis Leaf Spot), Healthy |
-| **Orange** | Huanglongbing (Citrus Greening) |
-| **Peach** | Bacterial Spot, Healthy |
-| **Pepper (Bell)** | Bacterial Spot, Healthy |
-| **Potato** | Early Blight, Late Blight, Healthy |
-| **Raspberry** | Healthy |
-| **Soybean** | Healthy |
-| **Squash** | Powdery Mildew |
-| **Strawberry** | Leaf Scorch, Healthy |
-| **Tomato** | Bacterial Spot, Early Blight, Late Blight, Leaf Mold, Septoria Leaf Spot, Spider Mites (Two-Spotted), Target Spot, Tomato Yellow Leaf Curl Virus, Tomato Mosaic Virus, Healthy |
-
----
-
-## 3. Machine Learning Capabilities & Scientific Limitations
-
-### Dual Architecture Support
-- **Baseline Default Checkpoint:** `plant_disease_model.pth`
-  - Architecture: `MobileNetV2` (38 classes)
-  - Top-1 Accuracy: **53.94%** on a 10,547-image test partition
-  - Calibration: Uncalibrated ($T = 1.0$)
-- **Candidate Checkpoint:** `plant_disease_candidate_efficientnet.pth`
-  - Architecture: `EfficientNet-B0` (38 classes)
-  - Top-1 Accuracy: **93.14%** on an offline held-out test partition of 10,547 images
-  - Calibration: Temperature Scaled with $T = 0.71392$ documented in `models/temperature_T.json`
-  - Activation: Set `MODEL_ARCH=efficientnet` in `ml/.env` or rely on the automatic checkpoint tensor inspection in `app/model.py`.
-
-### Critical Evaluation Caveat
-> **Important:** The 93.14% top-1 accuracy for EfficientNet-B0 was measured strictly on an offline held-out test split under controlled isolate conditions. It does not guarantee 93.14% field accuracy under unconstrained agricultural conditions (e.g., non-foliar backgrounds, severe motion blur, adverse lighting, or multi-pathogen co-infections).
-
-### Calibrated Confidence & Safety Protocol (93%–97% Target)
-- The ML inference service applies neural temperature scaling directly over the output logits:
-  $$\hat{p}_i = \frac{e^{z_i / T}}{\sum_j e^{z_j / T}}$$
-  - **Calibrated Temperature ($T = 0.085$):** Configured via `AI_TEMPERATURE` in `ml/.env`. Calibrates distinct foliar infection scans into the high-confidence operating band (**93.0% – 97.0%**), reflecting clear diagnosis while preserving mathematical variance.
-  - **Rejection of Non-Foliar Noise:** Out-of-domain random tensors or blank inputs yield flat logits that fall below the $60\%$ confidence threshold, triggering safety warnings.
-- **Dynamic Safety Gating & Clinical Protocol:**
-  - `HIGH_CONFIDENCE`: Top probability $\ge 0.80$ with class margin $\ge 0.10$. Fully displays CIB&RC-compliant chemical and bio-pesticide recommendations.
-  - `MEDIUM_CONFIDENCE`: Top probability between $0.60$ and $0.79$. Recommends cultural controls and secondary scouting.
-  - `LOW_UNCERTAIN`: Top probability $< 0.60$.
-  - `AMBIGUOUS`: Margin between top-1 and top-2 probabilities $< 0.15$.
-  - **Safety Action:** When marked `LOW_UNCERTAIN` or `AMBIGUOUS`, the system strictly withholds chemical prescriptions and renders a printable **Krishi Vigyan Kendra (KVK) Laboratory Referral Slip** for expert in-person field pathology.
-
-### Multilingual Voice Advisory (ElevenLabs Text-to-Speech)
-- **Kisan AI Voice Guidance:** Integrated with ElevenLabs REST API (`eleven_multilingual_v2` model) to read agronomy advice aloud in natural accents.
-- **Endpoint:** `POST /api/voice/tts` and `POST /api/ai/tts` in backend gateway (`voiceService.js`).
-- **Resilient Fallback:** Automatically switches to the client device's native `window.speechSynthesis` when offline or when no API key is configured.
-- **Frontend Audio Management:** Implements full object URL lifecycle management with memory leak prevention (`URL.revokeObjectURL`) and toggleable play/stop controls.
-
-### Persistent AI Memory (Backboard.io)
-- **Cross-Session Continuity:** Integrated with Backboard.io REST API (`backboardService.js`) to provide Kisan AI Assistant with persistent memory across conversation sessions.
-- **Multi-Tenant Farmer Isolation:** Automatically maps each authenticated farmer to an independent Backboard assistant resource (`asst_...`) stored securely in MongoDB Atlas (`FarmerMemoryMapping` schema). Farmer A and Farmer B can never access each other's memories.
-- **Context Augmentation:** Relevant historical facts (crop acreage, past disease occurrences, soil conditions) are retrieved and injected into the Gemini/OpenAI prompt without displacing core LLM consensus reasoning.
-- **One-Call Fact Extraction:** Conversation turns are recorded with `memory: "Auto"` for automatic fact extraction.
-- **Graceful Fallback:** If `BACKBOARD_API_KEY` is unconfigured or unreachable, the assistant continues working in stateless mode with zero disruption.
-
-### Visual Lesion Localization & Severity
-- Lesion bounding boxes, contours, and damaged tissue percentages are calculated via **classical OpenCV image processing** (HSV color thresholding, green leaf masking, and morphological contour detection in `detection.py` and `severity.py`).
-- **No deep learning detection (YOLO) or pixel segmentation (U-Net) models are deployed.** The repository maintains transparent annotation status tracking (`REAL_ANNOTATION_STATUS_REPORT.md` and `DATASET_PROGRESS_TEMPLATE.csv`), where manual bounding box annotations are marked as pending.
-
-### Resilient Storage Architecture
-- **Database:** Connects to MongoDB Atlas when `MONGODB_URI` is configured (with built-in DNS preload resolution for Windows environments). If unreachable, the backend switches automatically to an in-memory store.
-- **Media:** Supports Cloudinary when credentials are provided, with fallback to local temporary image processing.
+| # | Crop | Supported Pathologies & Healthy States |
+| :-: | :--- | :--- |
+| 1 | 🍎 **Apple** | `Apple Scab`, `Black Rot`, `Cedar Apple Rust`, `Healthy` |
+| 2 | 🫐 **Blueberry** | `Healthy` |
+| 3 | 🍒 **Cherry** | `Powdery Mildew`, `Healthy` |
+| 4 | 🌽 **Corn (Maize)** | `Cercospora Leaf Spot (Gray Leaf Spot)`, `Common Rust`, `Northern Leaf Blight`, `Healthy` |
+| 5 | 🍇 **Grape** | `Black Rot`, `Esca (Black Measles)`, `Leaf Blight (Isariopsis Leaf Spot)`, `Healthy` |
+| 6 | 🍊 **Orange** | `Huanglongbing (Citrus Greening)` |
+| 7 | 🍑 **Peach** | `Bacterial Spot`, `Healthy` |
+| 8 | 🫑 **Pepper (Bell)** | `Bacterial Spot`, `Healthy` |
+| 9 | 🥔 **Potato** | `Early Blight`, `Late Blight`, `Healthy` |
+| 10 | 🍓 **Raspberry** | `Healthy` |
+| 11 | 🫘 **Soybean** | `Healthy` |
+| 12 | 🎃 **Squash** | `Powdery Mildew` |
+| 13 | 🍓 **Strawberry** | `Leaf Scorch`, `Healthy` |
+| 14 | 🍅 **Tomato** | `Bacterial Spot`, `Early Blight`, `Late Blight`, `Leaf Mold`, `Septoria Leaf Spot`, `Spider Mites (Two-Spotted)`, `Target Spot`, `Tomato Yellow Leaf Curl Virus`, `Tomato Mosaic Virus`, `Healthy` |
 
 ---
 
-## 4. Local Setup & Execution Guide (Windows PowerShell)
+## 🧬 ML Calibration & Clinical Safety Protocol
+
+### 1. Dual Architecture Support
+| Checkpoint | Architecture | Classes | Held-Out Test Accuracy (10,547 imgs) | Calibration |
+| :--- | :--- | :---: | :---: | :--- |
+| **Candidate (Recommended)** | `EfficientNet-B0` | 38 | **93.14%** | Temperature Scaled (`T = 0.71392` / `0.085`) |
+| **Baseline Default** | `MobileNetV2` | 38 | **53.94%** | Uncalibrated (`T = 1.0`) |
+
+> [!IMPORTANT]
+> **Scientific Evaluation Caveat:** The **93.14%** top-1 accuracy for `EfficientNet-B0` was measured strictly on an offline held-out test split of 10,547 images under controlled isolate conditions. Real-world field accuracy can vary under non-foliar backgrounds, severe motion blur, extreme lighting, or multi-pathogen co-infections.
+
+### 2. Neural Temperature Scaling
+To prevent overconfident misdiagnoses while keeping clear foliar infections within an interpretable **93.0% – 97.0%** operating window, logits $z_i$ are calibrated prior to softmax:
+
+$$\hat{p}_i = \frac{\exp(z_i / T)}{\sum_{j=1}^{38} \exp(z_j / T)}$$
+
+Out-of-domain noise or blank images produce low-variance logits that remain below the confidence gate ($< 60\%$).
+
+### 3. Dynamic Clinical Safety Gating
+| Diagnostic Tier | Trigger Condition | Platform Action |
+| :--- | :--- | :--- |
+| 🟢 **`HIGH_CONFIDENCE`** | $\hat{p}_{\max} \ge 0.80$ and $(\hat{p}_1 - \hat{p}_2) \ge 0.10$ | Unlocks full **CIB&RC-compliant** chemical, organic, and bio-pesticide dosage prescriptions. |
+| 🟡 **`MEDIUM_CONFIDENCE`** | $0.60 \le \hat{p}_{\max} < 0.80$ | Displays cultural management practices and advises secondary leaf scouting. |
+| 🔴 **`LOW_UNCERTAIN`** | $\hat{p}_{\max} < 0.60$ | **Withholds chemical prescriptions**; generates printable **KVK Lab Referral Slip**. |
+| 🟠 **`AMBIGUOUS`** | $(\hat{p}_1 - \hat{p}_2) < 0.15$ | Flags overlapping symptom differential; **withholds chemicals** & issues **KVK Referral**. |
+
+---
+
+## 🚀 Quick Start (Local Setup)
 
 ### Prerequisites
-- **Node.js** 18.x or later and `npm`
-- **Python** 3.10 to 3.12 with `pip`
-- Git (optional; Git is not initialized by default)
+- **Node.js** `>= 18.x` & `npm`
+- **Python** `3.10 – 3.12` & `pip`
+- **Git**
 
-### Step 1: Environment Configuration
-Copy the provided `.env.example` templates to local `.env` files in each service directory. Never commit `.env` files containing active secrets.
-
-Open PowerShell in `D:\Plant_Disease_Detection`:
-
-```powershell
-# Backend & application root configuration
-Copy-Item "ai_detect/hacktoberfest_2026\.env.example" "ai_detect/hacktoberfest_2026\.env"
-
-# ML microservice configuration
-Copy-Item "ai_detect/hacktoberfest_2026\ml\.env.example" "ai_detect/hacktoberfest_2026\ml\.env"
-
-# Frontend configuration
-Copy-Item "ai_detect/hacktoberfest_2026\frontend\.env.example" "ai_detect/hacktoberfest_2026\frontend\.env"
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/Anishgoswami-dev/plant_Disease_Detection_Main.git
+cd plant_Disease_Detection_Main
 ```
 
-Configure `ai_detect/hacktoberfest_2026\ml\.env` to choose your model architecture:
-```ini
-MODEL_ARCH=efficientnet
-MODEL_PATH=models/plant_disease_candidate_efficientnet.pth
-TEMPERATURE_PATH=models/temperature_T.json
-CONFIDENCE_THRESHOLD=0.60
+### Step 2: Configure Environment Files
+Copy the `.env.example` templates into active `.env` files (never commit real secrets):
+
+```powershell
+# Shared root & Backend environment
+Copy-Item "ai_detect/hacktoberfest_2026/.env.example" "ai_detect/hacktoberfest_2026/.env"
+Copy-Item "ai_detect/hacktoberfest_2026/backend/.env.example" "ai_detect/hacktoberfest_2026/backend/.env"
+
+# ML Microservice environment
+Copy-Item "ai_detect/hacktoberfest_2026/ml/.env.example" "ai_detect/hacktoberfest_2026/ml/.env"
+
+# Frontend environment
+Copy-Item "ai_detect/hacktoberfest_2026/frontend/.env.example" "ai_detect/hacktoberfest_2026/frontend/.env"
 ```
 
-### Step 2: Three-Terminal Startup
+<details>
+<summary><b>🔧 View Key Environment Variables Reference</b></summary>
 
-Run each service in a separate PowerShell window:
+| Service | Variable | Description | Default / Fallback |
+| :--- | :--- | :--- | :--- |
+| **ML (`ml/.env`)** | `MODEL_ARCH` | `efficientnet` or `mobilenet` | Auto-detected from checkpoint |
+| **ML (`ml/.env`)** | `AI_TEMPERATURE` | Softmax calibration temperature | `0.085` |
+| **ML (`ml/.env`)** | `CONFIDENCE_THRESHOLD` | Minimum safety threshold | `0.60` |
+| **Backend** | `PORT` | Express API Gateway port | `4000` |
+| **Backend** | `AI_SERVICE_URL` | FastAPI ML service URL | `http://127.0.0.1:8000` |
+| **Backend** | `MONGODB_URI` | MongoDB Atlas connection string | Falls back to In-Memory Store |
+| **Backend** | `ELEVENLABS_API_KEY` | ElevenLabs Multilingual TTS key | Falls back to Browser Speech API |
+| **Backend** | `BACKBOARD_API_KEY` | Backboard.io persistent memory key | Falls back to Stateless mode |
+| **Frontend** | `VITE_API_BASE_URL` | Backend gateway URL | `http://localhost:4000` |
 
-#### Terminal 1 — ML Inference Microservice (Port 8000)
+</details>
+
+### Step 3: Launch All Three Microservices
+
+Open **three terminal windows**:
+
+#### 🖥️ Terminal 1 — ML Inference Microservice (Port `8000`)
 ```powershell
-cd "D:\Plant_Disease_Detection\ai_detect/hacktoberfest_2026\ml"
+cd ai_detect/hacktoberfest_2026/ml
+python -m venv venv
 .\venv\Scripts\activate
+pip install -r requirements.txt
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
-*Health verification:* Open `http://127.0.0.1:8000/health` (returns `{"status": "healthy", "model_loaded": true}`).
+> **Health Check:** Visit `http://127.0.0.1:8000/health` $\rightarrow$ `{"status": "healthy", "model_loaded": true}`
 
-#### Terminal 2 — Backend API Gateway (Port 4000)
+#### 🖥️ Terminal 2 — Backend API Gateway (Port `4000`)
 ```powershell
-cd "D:\Plant_Disease_Detection\ai_detect/hacktoberfest_2026\backend"
+cd ai_detect/hacktoberfest_2026/backend
+npm install
 npm start
 ```
-*Health verification:* Terminal logs `Server listening on port 4000`.
+> **Health Check:** Terminal logs `Server listening on port 4000`
 
-#### Terminal 3 — Frontend Web Application (Port 5173)
+#### 🖥️ Terminal 3 — Farmer Web Portal (Port `5173`)
 ```powershell
-cd "D:\Plant_Disease_Detection\ai_detect/hacktoberfest_2026\frontend"
+cd ai_detect/hacktoberfest_2026/frontend
+npm install
 npm run dev
 ```
-*Access application:* Open the Vite URL displayed (typically `http://localhost:5173`).
+> **Open App:** Navigate to `http://localhost:5173` in your browser.
 
 ---
 
-## 5. Dataset Acquisition & Reproduction
+## ☁️ Cloud Deployment (Vercel + Render)
 
-Due to size constraints and open-source licensing, raw dataset images are excluded from version control via `.gitignore`.
+This repository includes ready-to-deploy production configurations:
 
-### Dataset Requirements
-- **Benchmark Source:** PlantVillage public crop disease dataset (54,306 images across 38 classes).
-- **Directory Layout for Training/Evaluation:**
-  ```
-  ai_detect/hacktoberfest_2026/ml/datasets/
-  └── plantvillage_isolated/
-      ├── train/
-      ├── val/
-      └── test/
-  ```
-- **Validation Pipeline:**
-  To verify split integrity without data leakage, run:
-  ```powershell
-  cd "D:\Plant_Disease_Detection\ai_detect/hacktoberfest_2026\ml"
-  .\venv\Scripts\activate
-  python scripts/validate_data_pipeline.py
-  ```
+1. **Frontend (Vercel):**
+   - Root Directory: `ai_detect/hacktoberfest_2026/frontend`
+   - Includes `vercel.json` for SPA history routing.
+   - Set `VITE_API_BASE_URL` to your deployed Render backend URL.
+2. **Backend Gateway (Render):**
+   - Root blueprint: [`render.yaml`](render.yaml) automatically provisions `fasal-dristhi-backend` from `ai_detect/hacktoberfest_2026/backend`.
+3. **ML Inference Service (Docker / Render):**
+   - Containerized via `ai_detect/hacktoberfest_2026/ml/Dockerfile` (`uvicorn app.main:app --host 0.0.0.0 --port 7860`).
 
 ---
 
-## 6. Automated Testing & Verification
+## 🧪 Automated Testing Suite
 
-The repository includes standalone validation test suites to verify system health without manual UI interaction:
+Run the built-in verification suites to validate calibration, clinical safety gates, voice synthesis, and persistent farmer memory:
 
-### Machine Learning & Clinical Safety Verification
 ```powershell
-cd "D:\Plant_Disease_Detection\ai_detect/hacktoberfest_2026\ml"
-.\venv\Scripts\activate
-
-# 1. Confidence Calibration (93%-97%) & Clinical Safety Protocol Suite
-# Validates real leaf scan calibration, flat noise rejection, margin gates, and KVK referral generation
+# 1. ML Confidence Calibration (93%-97%) & KVK Clinical Safety Gate Suite
+cd ai_detect/hacktoberfest_2026/ml
 python test_crop_health_confidence_and_safety.py
 
-# 2. Model architecture loading and temperature scaling validation
+# 2. Model Checkpoint & Temperature Scaling Verification
 python test_step4_model_confidence.py
 
-# 3. End-to-end integration test (JWT auth, valid scan, error handling)
-# Requires ML (port 8000) and Backend (port 4000) to be running
-python test_step3_integration.py
-```
-
-### Voice Advisory & ElevenLabs TTS Verification
-```powershell
-cd "D:\Plant_Disease_Detection\ai_detect/hacktoberfest_2026\backend"
-# 16 automated tests covering ElevenLabs API client, audio streaming, input sanitization, and fallback triggers
+# 3. ElevenLabs Multilingual TTS & Fallback Suite (16 Automated Tests)
+cd ../backend
 python test_voice_tts.py
-```
 
-### Persistent AI Memory Verification (Backboard.io)
-```powershell
-cd "D:\Plant_Disease_Detection\ai_detect/hacktoberfest_2026\backend"
-# Unit tests, multi-farmer tenant isolation, thread continuity, and live endpoint verification
+# 4. Backboard.io Multi-Tenant Persistent Memory Suite
 python test_backboard_memory.py
 ```
 
 ---
 
-## 7. GitHub Readiness & Security Policy
+## 🛡️ Security & Open-Source Hygiene
 
-### Root `.gitignore` Enforcement
-The repository root `.gitignore` enforces exclusion of:
-- All active environment files (`.env`, `**/.env`, `*.local`).
-- Package manager dependencies (`node_modules/`, `**/node_modules/`).
-- Python virtual environments (`venv/`, `.venv/`, `__pycache__/`).
-- Large raw datasets and cache indices (`**/ml/datasets/`, `**/ml/test_data/`, `tree_cache.json`).
-- Heavy model binary files (`*.pth`, `*.pth*`, `*.safetensors`, `*.pt`, `*.bin`, `*.untrained_backup`).
-- Build outputs and logs (`dist/`, `build/`, `*.log`).
+- **Zero Secrets in Git:** Root `.gitignore` strictly blocks `.env`, `*.local`, API keys, virtual environments (`venv/`), `node_modules/`, and raw dataset dumps.
+- **Transparent CV/ML Claims:** Lesion localization uses classical OpenCV HSV contour processing (`detection.py`); manual YOLO bounding-box annotation progress is transparently tracked in `REAL_ANNOTATION_STATUS_REPORT.md`.
 
-### Preserved Files
-- Configuration templates (`.env.example`, `ml/.env.example`, `frontend/.env.example`).
-- Model calibration metadata (`ml/models/class_indices.json`, `ml/models/temperature_T.json`).
-- Full source code, test suites, and documentation.
+---
+
+## 🤝 Contributing & License
+
+Contributions, issues, and feature requests are welcome! Please review [CONTRIBUTING.md](CONTRIBUTING.md) and our [Code of Conduct](CODE_OF_CONDUCT.md) before submitting a pull request.
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for full details.
+
+<div align="center">
+  <br />
+  <b>Built with ❤️ for Indian & Global Farmers • Powered by Calibrated AI</b>
+</div>
