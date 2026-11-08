@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 40" width="1000" height="40">
+  <path d="M0 20 C80 4 140 36 220 20 S360 4 440 20 S580 36 660 20 S800 4 880 20 S960 30 1000 20" fill="none" stroke="#3f8f4a" stroke-width="2.5" stroke-linecap="round"/>
+  <g fill="#86c26a">
+    <path d="M110 14 q10 -14 22 -6 q-8 12 -22 6Z"/><path d="M290 26 q10 14 22 6 q-8 -12 -22 -6Z"/>
+    <path d="M530 14 q10 -14 22 -6 q-8 12 -22 6Z"/><path d="M720 26 q10 14 22 6 q-8 -12 -22 -6Z"/>
+    <path d="M900 14 q10 -14 22 -6 q-8 12 -22 6Z"/>
+  </g>
+  <circle cx="500" cy="20" r="6" fill="#f5b942"><animate attributeName="r" values="5;8;5" dur="3s" repeatCount="indefinite"/></circle>
+</svg>

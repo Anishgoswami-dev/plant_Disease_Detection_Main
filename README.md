@@ -1,43 +1,102 @@
 <div align="center">
 
-<img src="docs/assets/fasal_dristhi_app_preview.png" alt="Fasal Dristhi Banner Preview" width="340" style="border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.22); border: 2px solid #16a34a;" />
+<img src="docs/assets/banner.svg" alt="Fasal Dristhi — potato leaf with late blight lesion" width="100%" />
 
-# 🌾 Fasal Dristhi (CropSentinel)
-### **Intelligent Calibrated Plant Disease Diagnostic & Multilingual Agro-Advisory Platform**
+<br/>
 
-*Empowering farmers with calibrated deep learning pathology, clinical safety gating, multilingual voice guidance, and persistent agricultural memory.*
+```text
+🌰 SCAN  ➜  🌱 CALIBRATE  ➜  🛡️ GATE  ➜  🌿 PRESCRIBE  ➜  🗣️ SPEAK  ➜  🌾 REMEMBER
+```
 
-[![React](https://img.shields.io/badge/Frontend-React_18_%2B_Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://vitejs.dev/)
-[![Node.js](https://img.shields.io/badge/Backend-Node.js_%2B_Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![FastAPI](https://img.shields.io/badge/ML_Engine-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![PyTorch](https://img.shields.io/badge/Deep_Learning-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![OpenCV](https://img.shields.io/badge/Vision-OpenCV_HSV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
-[![MongoDB Atlas](https://img.shields.io/badge/Database-MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
-[![ElevenLabs](https://img.shields.io/badge/Voice_AI-ElevenLabs_HD-000000?style=for-the-badge&logo=elevenlabs&logoColor=white)](https://elevenlabs.io/)
-[![Backboard.io](https://img.shields.io/badge/Memory-Backboard.io_AI-8A2BE2?style=for-the-badge)](https://backboard.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+**An AI that knows when it *doesn't* know.**
+Point a phone at a sick leaf — get a calibrated diagnosis, a safety-gated prescription, and advice read aloud in your language.
+
+[![React](https://img.shields.io/badge/Frontend-React_18_%2B_Vite-1f4d2e?style=for-the-badge&logo=react&logoColor=61DAFB)](https://vitejs.dev/)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js_%2B_Express-1f4d2e?style=for-the-badge&logo=node.js&logoColor=39ff88)](https://nodejs.org/)
+[![FastAPI](https://img.shields.io/badge/ML_Engine-FastAPI-1f4d2e?style=for-the-badge&logo=fastapi&logoColor=22d3ee)](https://fastapi.tiangolo.com/)
+[![PyTorch](https://img.shields.io/badge/Deep_Learning-PyTorch-1f4d2e?style=for-the-badge&logo=pytorch&logoColor=EE4C2C)](https://pytorch.org/)
+[![OpenCV](https://img.shields.io/badge/Vision-OpenCV_HSV-1f4d2e?style=for-the-badge&logo=opencv&logoColor=5C3EE8)](https://opencv.org/)
+[![MongoDB](https://img.shields.io/badge/Database-MongoDB_Atlas-1f4d2e?style=for-the-badge&logo=mongodb&logoColor=47A248)](https://www.mongodb.com/atlas)
+[![ElevenLabs](https://img.shields.io/badge/Voice-ElevenLabs_HD-1f4d2e?style=for-the-badge&logo=elevenlabs&logoColor=white)](https://elevenlabs.io/)
+[![Backboard](https://img.shields.io/badge/Memory-Backboard.io-1f4d2e?style=for-the-badge&logoColor=white)](https://backboard.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-1f4d2e?style=for-the-badge&logoColor=39ff88)](LICENSE)
 
 <p align="center">
+  <a href="#-mission-brief">🛰️ Mission</a> •
+  <a href="#-live-interface">📱 Interface</a> •
+  <a href="#-how-a-scan-works">⚡ Pipeline</a> •
   <a href="#-key-highlights--features">✨ Features</a> •
   <a href="#-system-architecture">🏗️ Architecture</a> •
-  <a href="#-38-supported-crop-disease-classes">🌿 38 Crop Classes</a> •
-  <a href="#-ml-calibration--clinical-safety-protocol">🧬 ML & Safety</a> •
-  <a href="#-quick-start-local-setup">🚀 Quick Start</a> •
-  <a href="#-cloud-deployment-vercel--render">☁️ Deployment</a> •
-  <a href="#-automated-testing-suite">🧪 Testing</a>
+  <a href="#-38-supported-crop-disease-classes">🌿 Crops</a> •
+  <a href="#-ml-calibration--clinical-safety-protocol">🧬 Safety</a> •
+  <a href="#-quick-start-local-setup">🚀 Launch</a>
 </p>
 
 </div>
 
----
 
-## 🌟 Overview
+<img src="docs/assets/divider.svg" width="100%" alt="" />
 
-**Fasal Dristhi (CropSentinel)** is a full-stack, production-grade AI agricultural diagnostic and advisory platform built to bridge the gap between laboratory plant pathology and real-world farm decision-making.
 
-Unlike raw image classifiers that blindly output overconfident predictions on blurry or non-foliar photos, **Fasal Dristhi** combines **Temperature-Calibrated Deep Learning (`EfficientNet-B0` / `MobileNetV2`)**, **Classical OpenCV Lesion Morphometry**, **CIB&RC-Compliant Clinical Safety Gating**, **Multilingual ElevenLabs Voice Synthesis**, and **Backboard.io Persistent Farmer Memory** inside a resilient three-tier microservice architecture.
+## 🛰️ Mission Brief
 
----
+> **Problem:** Most plant-disease classifiers are confidently wrong. A blurry photo gets "98% Late Blight" — and a farmer sprays the wrong chemical.
+> **Mission:** A diagnostic system that is *calibrated*, *safe by design*, *speaks the farmer's language*, and *remembers the farm*.
+
+**Fasal Dristhi** (*"crop vision"*) fuses **temperature-calibrated deep learning** (`EfficientNet-B0` / `MobileNetV2`), **classical OpenCV lesion morphometry**, **CIB&RC-compliant clinical safety gating**, **multilingual ElevenLabs voice**, and **Backboard.io persistent memory** into a resilient three-tier microservice platform.
+
+| 🎯 Telemetry | Value |
+| :--- | :---: |
+| Crop-disease classes | **38** |
+| Crops covered | **14** |
+| Offline top-1 accuracy (EfficientNet-B0, 10,547 imgs) | **93.14%** |
+| Confidence window on clear infections | **93 – 97%** |
+| Safety gate on uncertain scans | **< 60% → chemicals withheld** |
+| Microservices | **3** (React · Node · FastAPI) |
+
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
+
+## 📱 Live Interface
+
+<div align="center">
+  <img src="docs/assets/fasal_dristhi_app_preview.png" alt="Fasal Dristhi farmer portal preview" width="320" />
+  <br/><sub><i>Farmer portal — Leaf Scout, Spray Weather, Kisan AI, voice playback</i></sub>
+</div>
+
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
+
+## ⚡ How a Scan Works
+
+<div align="center"><img src="docs/assets/lifecycle.svg" alt="Lifecycle of a scan" width="100%" /></div>
+
+<details>
+<summary><b>🔍 Zoom in: full decision flow</b></summary>
+
+```mermaid
+flowchart LR
+    A["📸 Leaf photo"] --> B["🧪 Validate<br/>MIME + normalize"]
+    B --> C["🧠 CNN<br/>38-class logits"]
+    C --> D["🌡️ Temperature<br/>scaling"]
+    B --> E["🎯 OpenCV HSV<br/>lesion + severity %"]
+    D --> F{"🛡️ Safety gate"}
+    E --> F
+    F -->|High| G["💊 CIB&RC<br/>prescription"]
+    F -->|Medium| H["🌱 Cultural<br/>controls"]
+    F -->|Low / Ambiguous| I["🏥 KVK referral<br/>no chemicals"]
+    G --> J["🗣️ Voice + 🧠 Memory"]
+    H --> J
+    I --> J
+```
+
+</details>
+
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## ✨ Key Highlights & Features
 
@@ -51,7 +110,9 @@ Unlike raw image classifiers that blindly output overconfident predictions on bl
 | 🤖 **Multi-Model Kisan AI Orchestrator** | Context-aware conversational agronomy assistant with real-time weather & spray window awareness. | Multi-LLM consensus orchestrator (Google Gemini + OpenAI) augmented with agronomy knowledge base. |
 | 🔄 **Zero-Downtime Resilient Fallbacks** | Operates smoothly even when external cloud services or API keys are unavailable. | Automatic MongoDB Atlas $\rightarrow$ In-Memory fallback, Cloudinary $\rightarrow$ Local storage, ElevenLabs $\rightarrow$ Native Web Speech. |
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 🏗️ System Architecture
 
@@ -87,7 +148,9 @@ flowchart TD
     Pre --> CV --> KB
 ```
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 📂 Repository Structure
 
@@ -140,9 +203,13 @@ plant_Disease_Detection_Main/
             └── requirements.txt            # Python ML dependencies
 ```
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 🌿 38 Supported Crop-Disease Classes
+
+<p align="center"><big>🍎 🫐 🍒 🌽 🍇 🍊 🍑 🫑 🥔 🍓 🫘 🎃 🍅</big></p>
 
 Fasal Dristhi diagnoses **38 distinct healthy and pathological states** across **14 agricultural crops**:
 
@@ -163,7 +230,9 @@ Fasal Dristhi diagnoses **38 distinct healthy and pathological states** across *
 | 13 | 🍓 **Strawberry** | `Leaf Scorch`, `Healthy` |
 | 14 | 🍅 **Tomato** | `Bacterial Spot`, `Early Blight`, `Late Blight`, `Leaf Mold`, `Septoria Leaf Spot`, `Spider Mites (Two-Spotted)`, `Target Spot`, `Tomato Yellow Leaf Curl Virus`, `Tomato Mosaic Virus`, `Healthy` |
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 🧬 ML Calibration & Clinical Safety Protocol
 
@@ -184,6 +253,12 @@ $$\hat{p}_i = \frac{\exp(z_i / T)}{\sum_{j=1}^{38} \exp(z_j / T)}$$
 Out-of-domain noise or blank images produce low-variance logits that remain below the confidence gate ($< 60\%$).
 
 ### 3. Dynamic Clinical Safety Gating
+
+<div align="center"><img src="docs/assets/safety-gate.svg" alt="Safety canopy confidence tiers" width="100%" /></div>
+
+<details open>
+<summary><b>Exact thresholds</b></summary>
+
 | Diagnostic Tier | Trigger Condition | Platform Action |
 | :--- | :--- | :--- |
 | 🟢 **`HIGH_CONFIDENCE`** | $\hat{p}_{\max} \ge 0.80$ and $(\hat{p}_1 - \hat{p}_2) \ge 0.10$ | Unlocks full **CIB&RC-compliant** chemical, organic, and bio-pesticide dosage prescriptions. |
@@ -191,7 +266,11 @@ Out-of-domain noise or blank images produce low-variance logits that remain belo
 | 🔴 **`LOW_UNCERTAIN`** | $\hat{p}_{\max} < 0.60$ | **Withholds chemical prescriptions**; generates printable **KVK Lab Referral Slip**. |
 | 🟠 **`AMBIGUOUS`** | $(\hat{p}_1 - \hat{p}_2) < 0.15$ | Flags overlapping symptom differential; **withholds chemicals** & issues **KVK Referral**. |
 
----
+</details>
+
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 🚀 Quick Start (Local Setup)
 
@@ -268,7 +347,9 @@ npm run dev
 ```
 > **Open App:** Navigate to `http://localhost:5173` in your browser.
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## ☁️ Cloud Deployment (Vercel + Render)
 
@@ -283,7 +364,9 @@ This repository includes ready-to-deploy production configurations:
 3. **ML Inference Service (Docker / Render):**
    - Containerized via `ai_detect/2026/ml/Dockerfile` (`uvicorn app.main:app --host 0.0.0.0 --port 7860`).
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 🧪 Automated Testing Suite
 
@@ -305,14 +388,18 @@ python test_voice_tts.py
 python test_backboard_memory.py
 ```
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 🛡️ Security & Open-Source Hygiene
 
 - **Zero Secrets in Git:** Root `.gitignore` strictly blocks `.env`, `*.local`, API keys, virtual environments (`venv/`), `node_modules/`, and raw dataset dumps.
 - **Transparent CV/ML Claims:** Lesion localization uses classical OpenCV HSV contour processing (`detection.py`); manual YOLO bounding-box annotation progress is transparently tracked in `REAL_ANNOTATION_STATUS_REPORT.md`.
 
----
+
+<img src="docs/assets/divider.svg" width="100%" alt="" />
+
 
 ## 🤝 Contributing & License
 
@@ -321,6 +408,5 @@ Contributions, issues, and feature requests are welcome! Please review [CONTRIBU
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for full details.
 
 <div align="center">
-  <br />
-  <b>Built with ❤️ for Indian & Global Farmers • Powered by Calibrated AI</b>
+  <img src="docs/assets/footer.svg" alt="Healthy crops. Informed farmers." width="100%" />
 </div>

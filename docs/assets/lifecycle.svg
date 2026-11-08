@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 250" width="1000" height="250" font-family="'Segoe UI',Arial,sans-serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c6e377"/><stop offset="1" stop-color="#2f8f4e"/></linearGradient>
+  </defs>
+  <rect width="1000" height="250" rx="24" fill="#f4f1de"/>
+  <text x="500" y="38" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#2b4a2f">From leaf to advice — the life of a scan</text>
+  <path d="M90 140 C220 80 300 200 410 140 S600 80 700 140 S860 190 910 140" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 10"/>
+  <g text-anchor="middle">
+    <g transform="translate(90 140)"><circle r="40" fill="#fff" stroke="#6b4423" stroke-width="3"/><text y="12" font-size="34">🌰</text><text y="72" font-size="14" font-weight="700" fill="#2b4a2f">Capture</text><text y="90" font-size="12" fill="#5b6b52">snap a leaf</text></g>
+    <g transform="translate(250 125)"><circle r="40" fill="#fff" stroke="#86c26a" stroke-width="3"/><text y="12" font-size="34">🌱</text><text y="72" font-size="14" font-weight="700" fill="#2b4a2f">Validate</text><text y="90" font-size="12" fill="#5b6b52">MIME + normalize</text></g>
+    <g transform="translate(410 150)"><circle r="40" fill="#fff" stroke="#3f8f4a" stroke-width="3"/><text y="12" font-size="34">🧠</text><text y="72" font-size="14" font-weight="700" fill="#2b4a2f">Classify</text><text y="90" font-size="12" fill="#5b6b52">EfficientNet-B0</text></g>
+    <g transform="translate(570 120)"><circle r="40" fill="#fff" stroke="#f5b942" stroke-width="3"/><text y="12" font-size="34">🌡️</text><text y="72" font-size="14" font-weight="700" fill="#2b4a2f">Calibrate</text><text y="90" font-size="12" fill="#5b6b52">temperature T</text></g>
+    <g transform="translate(730 150)"><circle r="40" fill="#fff" stroke="#e76f51" stroke-width="3"/><text y="12" font-size="34">🛡️</text><text y="72" font-size="14" font-weight="700" fill="#2b4a2f">Gate</text><text y="90" font-size="12" fill="#5b6b52">safety check</text></g>
+    <g transform="translate(900 135)"><circle r="40" fill="#fff" stroke="#2f8f4e" stroke-width="3"/><text y="12" font-size="34">🌾</text><text y="72" font-size="14" font-weight="700" fill="#2b4a2f">Advise</text><text y="90" font-size="12" fill="#5b6b52">voice + memory</text></g>
+  </g>
+</svg>
